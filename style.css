@@ -1,0 +1,164 @@
+.img {
+  margin-top: 95px;
+  margin-left: 200px;
+  position: absolute;
+}
+
+@-webkit-keyframes example {
+  0% {
+    left: 35px;
+    top: 35px;
+  }
+  25% {
+    left: 900px;
+    top: 35px;
+  }
+  50% {
+    left: 900px;
+    top: 450px;
+    transform: rotate(180deg);
+  }
+  75% {
+    left: 30px;
+    top: 450px;
+  }
+  100% {
+    left: 30px;
+    top: 35px;
+  }
+}
+
+@keyframes example {
+  0% {
+    left: 35px;
+    top: 35px;
+  }
+  25% {
+    left: 900px;
+    top: 35px;
+  }
+  50% {
+    left: 900px;
+    top: 450px;
+    transform: rotate(180deg);
+  }
+  75% {
+    left: 30px;
+    top: 450px;
+  }
+  100% {
+    left: 30px;
+    top: 35px;
+  }
+}
+#stage {
+  margin-top: -65px;
+}
+
+.draggable {
+  min-width: 5px;
+  width: 10px;
+  min-height: 5px;
+  height: 10px;
+  position: fixed;
+  top: 1;
+}
+
+/* words */
+@-webkit-keyframes marquee-horizontal {
+  0% {
+    text-indent: 0;
+  }
+  100% {
+    text-indent: -66.666vw;
+  }
+}
+@keyframes marquee-horizontal {
+  0% {
+    text-indent: 0;
+  }
+  100% {
+    text-indent: -66.666vw;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: "Albert Sans", sans-serif;
+  font-family: "Azeret Mono", monospace;
+  font-family: "Chivo Mono", monospace;
+  font-family: "Mulish", sans-serif;
+}
+
+[class*=marquee] {
+  font-size: 3.4vw;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  background: #B7BFB0;
+}
+[class*=marquee] span {
+  display: inline-block;
+  text-align: center;
+  text-indent: 0;
+  width: 33.333vw;
+}
+
+.marquee-bottom {
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid;
+  -webkit-animation: marquee-horizontal 20s linear infinite;
+          animation: marquee-horizontal 20s linear infinite;
+}
+
+.marquee-top {
+  top: 0;
+  transform: rotate(180deg);
+  width: 100%;
+  border-top: 1px solid;
+  -webkit-animation: marquee-horizontal 20s linear infinite;
+          animation: marquee-horizontal 20s linear infinite;
+}
+
+.marquee-left {
+  top: 0;
+  transform: rotate(90deg);
+  transform-origin: bottom left;
+  width: 100%;
+  border-top: 1px solid;
+  -webkit-animation: marquee-horizontal 20s linear infinite;
+          animation: marquee-horizontal 20s linear infinite;
+}
+
+.marquee-right {
+  top: 0;
+  transform: rotate(-90deg);
+  transform-origin: bottom right;
+  width: 100%;
+  border-top: 1px solid;
+  -webkit-animation: marquee-horizontal 20s linear infinite;
+          animation: marquee-horizontal 20s linear infinite;
+}
+
+#moving {
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.control-play {
+  margin: 500px;
+}
